@@ -40,4 +40,11 @@ window.onload = function() {
             this.querySelector('h3').style.color = '#fff';
         });
     });
+
+    // Validace a odeslání formuláře
+    document.querySelector('#contact form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Děkujeme za zprávu!');
+        this.reset();
+    });
 };
