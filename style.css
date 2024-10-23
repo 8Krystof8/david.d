@@ -1,116 +1,269 @@
-/* Základní stylování */
+/* Globální styly */
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
-/* Hlavička */
-header {
-    background-color: #35424a;
-    color: #ffffff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #e8491d 3px solid;
-}
-
-header h1 {
-    text-align: center;
-    margin: 0;
+/* Navigační lišta */
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
 }
 
 nav ul {
-    padding: 0;
     list-style: none;
-    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
-    text-transform: uppercase;
+    padding: 20px 0;
+    display: block;
 }
 
-/* Sekce */
-section {
-    padding: 20px;
+nav a:hover {
+    color: #ff6600;
+    transition: color 0.3s ease;
 }
 
-/* Projekty */
-.projects-container {
+/* Úvodní sekce */
+header {
+    height: 100vh;
+    background-image: url('images/header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding-top: 200px;
+}
+
+header h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    animation: fadeInDown 2s;
+}
+
+header p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    animation: fadeInUp 2s;
+}
+
+header button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #ff6600;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+}
+
+header button:hover {
+    background-color: #e65c00;
+}
+
+/* Sekce O mně */
+#about {
+    padding: 100px 50px;
+    background-color: #fff;
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeIn 2s;
+}
+
+.skills {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.project {
-    background-color: #ffffff;
-    width: 300px;
-    margin: 15px;
+.skill {
+    width: 30%;
+}
+
+.skill h3 {
     text-align: center;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
+}
+
+.skill-bar {
+    position: relative;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.skill-bar::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    background-color: #ff6600;
+    width: 0;
+    animation: loadSkill 2s forwards;
+}
+
+@keyframes loadSkill {
+    to {
+        width: var(--percent);
+    }
+}
+
+/* Sekce Projekty */
+#projects {
+    padding: 100px 50px;
+    background-color: #f9f9f9;
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeIn 2s;
+}
+
+.project-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.project {
+    width: 30%;
+    margin-bottom: 30px;
+    text-align: center;
+    animation: zoomIn 1s;
 }
 
 .project img {
     width: 100%;
-    height: auto;
-    border-bottom: 1px solid #dddddd;
+    border-radius: 10px;
 }
 
-.project-btn {
-    background-color: #e8491d;
-    color: #ffffff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 15px;
+.project h3 {
+    margin-top: 15px;
 }
 
-.project-btn:hover {
-    background-color: #cf3f14;
+/* Sekce Kontakt */
+#contact {
+    padding: 100px 50px;
+    background-color: #fff;
 }
 
-/* Kontakt */
-#contact-form {
+#contact h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeIn 2s;
+}
+
+#contact form {
     max-width: 600px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
-#contact-form label {
-    display: block;
-    margin-top: 10px;
+#contact input, #contact textarea {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-#contact-form input, #contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-}
-
-#contact-form button {
-    display: block;
-    background-color: #35424a;
-    color: #ffffff;
-    padding: 10px;
+#contact button {
+    padding: 15px;
+    background-color: #ff6600;
     border: none;
-    margin-top: 15px;
+    color: #fff;
     cursor: pointer;
 }
 
-#contact-form button:hover {
-    background-color: #e8491d;
+#contact button:hover {
+    background-color: #e65c00;
 }
 
-/* Patička */
-footer {
-    background-color: #35424a;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px;
+/* Tlačítko pro posun nahoru */
+#backToTop {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    padding: 15px;
+    background-color: #ff6600;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    border-radius: 50%;
+}
+
+#backToTop:hover {
+    background-color: #e65c00;
+}
+
+/* Animace */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); 
+    }
+    40% {
+        transform: translateY(-15px); 
+    }
+    60% {
+        transform: translateY(-7px); 
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
