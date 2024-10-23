@@ -29,4 +29,15 @@ window.onload = function() {
     skillBars.forEach(function(bar) {
         bar.style.setProperty('--percent', bar.getAttribute('data-percent'));
     });
+
+    // Interaktivní efekt na projekty
+    let projects = document.querySelectorAll('.project');
+    projects.forEach(function(project) {
+        project.addEventListener('mouseenter', function() {
+            this.querySelector('h3').style.color = '#00aaff';
+        });
+        project.addEventListener('mouseleave', function() {
+            this.querySelector('h3').style.color = '#fff';
+        });
+    });
 };
