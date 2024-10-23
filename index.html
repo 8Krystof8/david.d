@@ -2,13 +2,18 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Pan Doležal - Hardware Enthusiast</title>
+    <title>David AI - Vesmírný Hardware</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ikona stránky -->
+    <link rel="icon" href="images/favicon.png">
+    <!-- Připojení CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navigační lišta -->
     <nav>
+        <div class="logo">David AI</div>
         <ul>
             <li><a href="#home">Domů</a></li>
             <li><a href="#about">O mně</a></li>
@@ -18,16 +23,21 @@
     </nav>
 
     <!-- Úvodní sekce -->
-    <header id="home">
-        <h1>Vítejte na stránkách pana Doležala</h1>
-        <p>Specialista na hardware s vášní pro technologie.</p>
-        <button onclick="scrollToSection('about')">Zjistit více</button>
-    </header>
+    <section id="home">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="content">
+            <h1>Vítejte ve vesmíru hardware</h1>
+            <p>Objevte nekonečné možnosti technologií s Davidem AI.</p>
+            <button onclick="scrollToSection('about')">Zjistit více</button>
+        </div>
+    </section>
 
     <!-- Sekce O mně -->
     <section id="about">
         <h2>O mně</h2>
-        <p>Jsem nadšenec do hardware s dlouholetými zkušenostmi v oboru...</p>
+        <p>Jsem nadšenec do hardware s vášní pro vesmír a technologie...</p>
+        <!-- Animace dovedností -->
         <div class="skills">
             <div class="skill">
                 <h3>Procesory</h3>
@@ -35,11 +45,11 @@
             </div>
             <div class="skill">
                 <h3>Grafické karty</h3>
-                <div class="skill-bar" data-percent="80%"></div>
+                <div class="skill-bar" data-percent="85%"></div>
             </div>
             <div class="skill">
-                <h3>Základní desky</h3>
-                <div class="skill-bar" data-percent="85%"></div>
+                <h3>AI Technologie</h3>
+                <div class="skill-bar" data-percent="95%"></div>
             </div>
         </div>
     </section>
@@ -50,15 +60,15 @@
         <div class="project-gallery">
             <div class="project">
                 <img src="images/project1.jpg" alt="Projekt 1">
-                <h3>Projekt 1</h3>
+                <h3>Vesmírný počítač</h3>
             </div>
             <div class="project">
                 <img src="images/project2.jpg" alt="Projekt 2">
-                <h3>Projekt 2</h3>
+                <h3>AI Robotika</h3>
             </div>
             <div class="project">
                 <img src="images/project3.jpg" alt="Projekt 3">
-                <h3>Projekt 3</h3>
+                <h3>Interaktivní hologram</h3>
             </div>
         </div>
     </section>
@@ -75,8 +85,9 @@
     </section>
 
     <!-- Tlačítko pro posun nahoru -->
-    <button id="backToTop" onclick="scrollToTop()">Nahoru</button>
+    <button id="backToTop" onclick="scrollToTop()">&#9650;</button>
 
+    <!-- Připojení JavaScriptu -->
     <script src="script.js"></script>
 </body>
 </html>
