@@ -1,0 +1,116 @@
+/* Základní stylování */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Hlavička */
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Sekce */
+section {
+    padding: 20px;
+}
+
+/* Projekty */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project {
+    background-color: #ffffff;
+    width: 300px;
+    margin: 15px;
+    text-align: center;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #dddddd;
+}
+
+.project-btn {
+    background-color: #e8491d;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.project-btn:hover {
+    background-color: #cf3f14;
+}
+
+/* Kontakt */
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+#contact-form button {
+    display: block;
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #e8491d;
+}
+
+/* Patička */
+footer {
+    background-color: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
