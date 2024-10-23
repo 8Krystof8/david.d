@@ -1,119 +1,190 @@
 /* Globální styly */
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
 }
 
 /* Navigační lišta */
 nav {
     position: fixed;
     width: 100%;
-    background-color: #333;
+    background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 5s infinite;
+}
+
+@keyframes rainbow {
+    0% {background-position: 0%;}
+    100% {background-position: 100%;}
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: center;
 }
 
-nav li {
-    margin: 0 20px;
+nav ul li {
+    margin-left: 30px;
 }
 
-nav a {
-    color: #fff;
+nav ul li a {
     text-decoration: none;
-    padding: 20px 0;
-    display: block;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
 }
 
-nav a:hover {
-    color: #ff6600;
-    transition: color 0.3s ease;
+nav ul li a:hover {
+    color: #00aaff;
 }
 
 /* Úvodní sekce */
-header {
+#home {
     height: 100vh;
-    background-image: url('images/header-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+    position: relative;
     text-align: center;
-    padding-top: 200px;
+    overflow: hidden;
 }
 
-header h1 {
-    font-size: 50px;
+#home .stars, #home .twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-repeat: repeat;
+    animation: moveBackground 200s linear infinite;
+}
+
+#home .stars {
+    background: url('images/stars.png') repeat;
+}
+
+#home .twinkling {
+    background: url('images/twinkling.png') repeat;
+    opacity: 0.5;
+    animation: moveBackground 100s linear infinite;
+}
+
+@keyframes moveBackground {
+    from {transform: translate3d(0, 0, 0);}
+    to {transform: translate3d(-50%, -50%, 0);}
+}
+
+#home .content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    animation: fadeIn 3s ease-in-out;
+}
+
+#home h1 {
+    font-size: 48px;
     margin-bottom: 20px;
-    animation: fadeInDown 2s;
 }
 
-header p {
+#home p {
     font-size: 24px;
     margin-bottom: 40px;
-    animation: fadeInUp 2s;
 }
 
-header button {
+#home button {
     padding: 15px 30px;
     font-size: 18px;
-    background-color: #ff6600;
+    background-color: #00aaff;
     border: none;
-    color: #fff;
+    border-radius: 5px;
     cursor: pointer;
-    animation: bounce 2s infinite;
+    color: #fff;
+    transition: background 0.3s;
 }
 
-header button:hover {
-    background-color: #e65c00;
+#home button:hover {
+    background-color: #0088cc;
 }
 
 /* Sekce O mně */
 #about {
     padding: 100px 50px;
-    background-color: #fff;
+    background-color: #111;
+    text-align: center;
 }
 
 #about h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    animation: fadeIn 2s;
+    font-size: 36px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+#about h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #00aaff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+#about p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
 }
 
 .skills {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .skill {
-    width: 30%;
+    width: 250px;
+    margin: 20px;
 }
 
 .skill h3 {
-    text-align: center;
+    margin-bottom: 10px;
 }
 
 .skill-bar {
-    position: relative;
-    height: 20px;
-    background-color: #ddd;
-    border-radius: 10px;
+    width: 100%;
+    background: #333;
+    border-radius: 5px;
     overflow: hidden;
-    margin-top: 10px;
 }
 
 .skill-bar::after {
     content: '';
-    position: absolute;
-    height: 100%;
-    background-color: #ff6600;
+    display: block;
+    height: 20px;
     width: 0;
+    background: linear-gradient(90deg, #00aaff, #00ff6c);
     animation: loadSkill 2s forwards;
 }
 
@@ -126,31 +197,55 @@ header button:hover {
 /* Sekce Projekty */
 #projects {
     padding: 100px 50px;
-    background-color: #f9f9f9;
+    background-color: #000;
+    text-align: center;
 }
 
 #projects h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    animation: fadeIn 2s;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+#projects h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #00aaff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
 }
 
 .project-gallery {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .project {
-    width: 30%;
-    margin-bottom: 30px;
-    text-align: center;
-    animation: zoomIn 1s;
+    width: 300px;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s;
 }
 
 .project img {
     width: 100%;
-    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project:hover img {
+    transform: scale(1.1);
 }
 
 .project h3 {
@@ -160,39 +255,57 @@ header button:hover {
 /* Sekce Kontakt */
 #contact {
     padding: 100px 50px;
-    background-color: #fff;
+    background-color: #111;
+    text-align: center;
 }
 
 #contact h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    animation: fadeIn 2s;
+    font-size: 36px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+#contact h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #00aaff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
 }
 
 #contact form {
     max-width: 600px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    margin-top: 50px;
 }
 
 #contact input, #contact textarea {
+    width: 100%;
     padding: 15px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #333;
+    background: #222;
+    color: #fff;
     border-radius: 5px;
 }
 
 #contact button {
-    padding: 15px;
-    background-color: #ff6600;
+    padding: 15px 30px;
+    background-color: #00aaff;
     border: none;
-    color: #fff;
+    border-radius: 5px;
     cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    transition: background 0.3s;
 }
 
 #contact button:hover {
-    background-color: #e65c00;
+    background-color: #0088cc;
 }
 
 /* Tlačítko pro posun nahoru */
@@ -201,31 +314,57 @@ header button:hover {
     bottom: 50px;
     right: 50px;
     padding: 15px;
-    background-color: #ff6600;
+    background-color: #00aaff;
     border: none;
     color: #fff;
     cursor: pointer;
     display: none;
     border-radius: 50%;
+    font-size: 24px;
+    z-index: 1000;
+    transition: background 0.3s;
 }
 
 #backToTop:hover {
-    background-color: #e65c00;
+    background-color: #0088cc;
+}
+
+/* Responsivní design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    #home h1 {
+        font-size: 32px;
+    }
+
+    #home p {
+        font-size: 18px;
+    }
+
+    .skills {
+        flex-direction: column;
+    }
+
+    .project {
+        width: 80%;
+    }
 }
 
 /* Animace */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
+@keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(50px);
@@ -233,37 +372,5 @@ header button:hover {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0); 
-    }
-    40% {
-        transform: translateY(-15px); 
-    }
-    60% {
-        transform: translateY(-7px); 
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
     }
 }
