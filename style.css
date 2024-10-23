@@ -161,13 +161,30 @@ nav ul li a:hover {
     bottom: -10px;
 }
 
-#about p {
-    font-size: 18px;
-    max-width: 800px;
-    margin: 20px auto;
-    line-height: 1.6;
+#about .profile {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 50px;
 }
 
+#about .profile img {
+    width: 250px;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+#about .profile .bio {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 20px;
+    text-align: left;
+}
+
+/* Sekce dovedností */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -246,10 +263,15 @@ nav ul li a:hover {
     border-radius: 10px;
     transition: transform 0.3s;
     position: relative;
+    background: #111;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .project img {
     width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
     transition: transform 0.3s;
 }
 
@@ -262,8 +284,14 @@ nav ul li a:hover {
 }
 
 .project h3 {
-    margin-top: 15px;
+    margin-top: 0;
     transition: color 0.3s;
+}
+
+.project p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
 }
 
 /* Sekce Kontakt */
@@ -291,10 +319,15 @@ nav ul li a:hover {
     bottom: -10px;
 }
 
+#contact p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
 #contact form {
     max-width: 600px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #contact input, #contact textarea {
@@ -366,6 +399,11 @@ nav ul li a:hover {
 
     #home p {
         font-size: 18px;
+    }
+
+    .profile {
+        flex-direction: column;
+        align-items: center;
     }
 
     .skills {
