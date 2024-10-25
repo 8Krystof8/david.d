@@ -67,7 +67,12 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('paul-volkmer-fX-qWsXl5x8-unsplash.jpg'); /* Nastavení obrázku do pozadí */
+    background-size: cover; /* Obrázek přizpůsobí výšce a šířce sekce */
+    background-position: center; /* Obrázek centrován */
+    background-repeat: no-repeat; /* Obrázek se nebude opakovat */
 }
+
 
 #home .stars, #home .twinkling {
     position: absolute;
