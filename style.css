@@ -67,7 +67,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(paul-volkmer-fX-qWsXl5x8-unsplash.jpg);
+    background-image: url(brian-mcgowan-I0fDR8xtApA-unsplash.jpg);
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -85,7 +85,7 @@ nav ul li a:hover {
 }
 
 #home .stars {
-    background: url(paul-volkmer-fX-qWsXl5x8-unsplash.jpg) repeat;
+    background: url(brian-mcgowan-I0fDR8xtApA-unsplash.jpg) repeat;
 }
 
 #home .twinkling {
